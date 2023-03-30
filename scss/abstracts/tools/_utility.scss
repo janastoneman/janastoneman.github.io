@@ -1,0 +1,385 @@
+// Utility classes are meant to do only one thing
+// They are designed to be simple, composable and re-usable, allowing for easy and fast development
+
+// row-top-buffers increase the margins above the row
+// Sees a lot of use on the homepage and pages with full-width image banners
+.row-top-buffer1 {
+  margin-top: 2.127659574%;
+}
+
+.row-top-buffer2 {
+  margin-top: 4.255319148%;
+}
+
+.row-top-buffer3 {
+  margin-top: 8.510638296%;
+}
+
+// re-usable border styles
+.border-gray {
+  border: 1px solid $iron-gray;
+}
+
+.no-border {
+  border: 0;
+}
+
+// used on immediate grid child element
+.flex-column {
+  display: flex;
+  flex-direction: column;
+
+  &.reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.flex-column-reverse-mobile {
+  @include tablet {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+// used on child elements of .flex-column to align bottom of repeated element
+.margin-top-auto {
+  margin-bottom: 0;
+  margin-top: auto;
+
+  // let .btn-group act like a p
+  &.btn-group {
+    line-height: 1.5em;
+    top: -2px;
+  }
+}
+
+// a make-believe subheading to bring content closer to a neary heading
+.shift-up {
+  margin-top: -1em;
+}
+
+// Text coloring
+
+.text-branded {
+  color: $thunderbird-red;
+  // we have to bold this for accessibilty/contrast considerations
+  font-weight: 600;
+}
+
+.text-branded-alternate {
+  color: $alternate-red;
+}
+
+.text-default-darken {
+  color: darken($font-color, $default-darken);
+}
+
+.text-error {
+  color: $alternate-red;
+}
+
+.text-info {
+  color: $color-info;
+}
+
+.text-success {
+  color: $color-success;
+}
+
+.text-white {
+  color: $white;
+}
+
+// To make the background less opaque
+.dark-gray-background-transparency {
+  background-color: $transparent-charcoal;
+  border-radius: 50px;
+  box-shadow: 0 0 15px 15px $transparent-charcoal;
+}
+
+.light-gray-background-transparency {
+  background-color: $transparent-iron;
+  border-radius: 50px;
+  box-shadow: 0 0 15px 15px $transparent-iron;
+}
+
+.white-background-transparency {
+  background-color: $three-q-white-bg;
+  border-radius: 50px;
+  box-shadow: 0 0 15px 15px $three-q-white-bg;
+}
+
+.background-charcoal-gray {
+  background-color: $charcoal-gray;
+}
+
+.background-alabaster-gray {
+  background-color: $alabaster-gray;
+}
+
+.background-iron-gray {
+  background-color: $iron-gray;
+}
+
+.background-white {
+  background-color: $white;
+}
+
+a {
+  &:hover,
+  &:focus {
+    &.no-decoration {
+      text-decoration: none;
+    }
+
+    &.text-error {
+      color: $alternate-red-dark;
+    }
+
+    &.text-info {
+      color: $color-info-dark;
+    }
+
+    &.text-success {
+      color: $color-success-dark;
+    }
+  }
+
+  &.no-decoration {
+    text-decoration: none;
+  }
+}
+
+// fonts
+
+.muted {
+  color: $dove-gray;
+}
+
+.primary-font {
+  font-family: $primary-font;
+}
+
+.secondary-font {
+  font-family: $secondary-font;
+}
+
+.primary-font-condensed {
+  font-family: $primary-font-condensed;
+}
+
+.lead {
+  font-size: 1.3em;
+  font-weight: 200;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+// Spacing
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.mega-margin {
+  margin: 25px;
+}
+
+.mega-margin-vertical {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.mega-margin-right {
+  @include tablet {
+    margin-right: 0;
+  }
+
+  margin-right: 50px;
+}
+
+.mega-margin-left {
+  @include tablet {
+    margin-left: 0;
+  }
+
+  margin-left: 50px;
+}
+
+.mega-margin-bottom {
+  margin-bottom: 25px;
+}
+
+.mega-margin-top {
+  margin-top: 25px;
+}
+
+.mega-padding {
+  @include tablet {
+    padding: 25px;
+  }
+
+  padding: 50px;
+}
+
+.mega-padding-vertical {
+  @include tablet {
+    padding-bottom: 25px;
+    padding-top: 25px;
+  }
+
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.mega-padding-bottom {
+  @include tablet {
+    padding-bottom: 25px;
+  }
+
+  padding-bottom: 50px;
+}
+
+.mega-padding-top {
+  @include tablet {
+    padding-top: 25px;
+  }
+
+  padding-top: 50px;
+}
+
+.rounded-corners {
+  border-radius: 20px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.hide,
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// Only display content to screen readers
+// Taken from Bootstrap.
+//
+// See: http://a11yproject.com/posts/how-to-hide-content
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+.hide-text {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+// Image special effects
+.img-rounded {
+  border-radius: 6px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+// Responsive Utilities
+.visible-phone {
+  display: none;
+}
+
+.visible-tablet {
+  display: none;
+}
+
+.visible-desktop {
+  display: block;
+}
+
+.hidden-phone {
+  display: block;
+}
+
+.hidden-tablet {
+  display: block;
+}
+
+.hidden-desktop {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .visible-phone {
+    display: block;
+  }
+
+  .hidden-phone {
+    display: none;
+  }
+
+  .hidden-desktop {
+    display: block;
+  }
+
+  .visible-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .visible-tablet {
+    display: block;
+  }
+
+  .hidden-tablet {
+    display: none;
+  }
+
+  .hidden-desktop {
+    display: block;
+  }
+
+  .visible-desktop {
+    display: none;
+  }
+}

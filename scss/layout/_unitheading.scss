@@ -1,0 +1,30 @@
+section {
+  &.unitheading {
+    color: $dove-gray;
+    font-family: $primary-font;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: .6px;
+    line-height: 1.4em;
+
+    a {
+      color: $dove-gray;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &.unitheading-noimage {
+    border-bottom: 1px solid $nobel-gray;
+    padding: 5px 0 10px;
+
+    a {
+      &:hover {
+        color: $thunderbird-red;
+      }
+    }
+  }
+}

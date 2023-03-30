@@ -1,0 +1,77 @@
+.contact-department {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-heading-icon {
+  bottom: 10px;
+  font-size: 1.2em;
+  left: 20px;
+  position: relative;
+}
+
+.contact-links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    @include tablet {
+      &.text-link {
+        flex-basis: 100%;
+      }
+    }
+
+    margin: 0 20px 0 0;
+  }
+
+  .fas,
+  .fab {
+    font-size: 28px;
+    padding: 10px;
+
+    &::before {
+      color: $dove-gray;
+    }
+  }
+
+  .fab {
+    &:hover {
+      &::before {
+        font-weight: 900;
+      }
+    }
+  }
+
+  .fas {
+    &::before {
+      font-size: .8em;
+    }
+  }
+}
+
+.nav {
+  &.contact-links {
+    li {
+      display: block;
+      margin: 0;
+
+      a {
+        @include tablet {
+          padding: 2px 0 10px 10px;
+        }
+
+        padding: 2px 0 10px;
+      }
+    }
+  }
+}
+
+//Different styling for when page is full-width
+.full-width-page {
+  .contact-department {
+    width: 100%;
+  }
+}

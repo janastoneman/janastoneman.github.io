@@ -1,0 +1,73 @@
+// General
+
+// Based on Bootstrap, which uses http://h5bp.com/q
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin transition($prop-value) {
+  @if $transitions-enabled {
+    transition: $prop-value;
+  }
+}
+
+
+
+// Breakpoints
+// TODO: Make these mixins work mobile-first.
+
+@mixin tiny-only {
+  @media (max-width: #{$tiny-max-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-max-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (max-width: #{$tablet-max-width}) and (min-width: #{$mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin above-tablet {
+  @media (min-width: #{$tablet-max-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin below-desktop {
+  @media (max-width: #{$desktop-min-width}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: #{$max-view-width}) {
+    @content;
+  }
+}

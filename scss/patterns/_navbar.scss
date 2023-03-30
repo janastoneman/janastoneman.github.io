@@ -1,0 +1,184 @@
+// Extracted from _btn.scss
+
+.nav-tabs {
+  .dropdown-menu {
+    border-width: 1px;
+  }
+
+  > li {
+    > a {
+      &:hover {
+        border-color: $iron-gray;
+      }
+    }
+  }
+
+  .active {
+    > a {
+      &:hover {
+        border-color: transparent $iron-gray $iron-gray;
+      }
+    }
+  }
+}
+
+.nav-pills {
+  .dropdown-menu {
+    border-radius: 4px;
+    border-width: 1px;
+  }
+}
+
+.tabs-stacked {
+  .open {
+    > a {
+      &:hover {
+        border-color: $dove-gray;
+      }
+    }
+  }
+}
+
+.tabbable {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+.tab-content {
+  display: table;
+  width: 100%;
+}
+
+.tabs-below {
+  .nav-tabs {
+    border-bottom: 0;
+
+    .active {
+      > a {
+        border-color: transparent $iron-gray $iron-gray;
+      }
+    }
+
+    > a {
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+
+    > li {
+      margin-bottom: 0;
+      margin-top: -1px;
+
+      > a {
+        border-radius: 0 0 4px 4px;
+      }
+    }
+  }
+}
+
+.tabs-right {
+
+  .active {
+    > a {
+      &:hover {
+        border-color: $iron-gray $iron-gray $iron-gray transparent;
+      }
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 0;
+    border-left: 1px solid $iron-gray;
+    float: right;
+    margin-left: 19px;
+
+    .active {
+      > a {
+        border-color: $iron-gray $iron-gray $iron-gray transparent;
+      }
+    }
+
+    > li {
+      float: none;
+
+      > a {
+        border-radius: 0 4px 4px 0;
+        margin-bottom: 3px;
+        margin-left: -1px;
+        margin-right: 0;
+        min-width: 74px;
+      }
+    }
+  }
+}
+
+.tabs-left {
+  .active {
+    > a {
+      &:hover {
+        border-color: $iron-gray transparent $iron-gray $iron-gray;
+      }
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 0;
+    border-right: 1px solid $iron-gray;
+    float: left;
+    margin-right: 19px;
+
+    .active {
+      > a {
+        border-color: $iron-gray transparent $iron-gray $iron-gray;
+      }
+    }
+
+    > li {
+      float: none;
+
+      > a {
+        border-radius: 4px 0 0 4px;
+        margin-bottom: 3px;
+        margin-right: -1px;
+        min-width: 74px;
+      }
+    }
+  }
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.navbar {
+  margin-bottom: 18px;
+  overflow: visible;
+
+  .container {
+    width: auto;
+  }
+}
+
+.navbar-inner {
+  background-color: $thunder-black;
+  background-image: linear-gradient(to bottom, $thunder-black, $thunder-black);
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px $one-q-black-bg, inset 0 -1px 0 $one-q-black-bg;
+  padding-left: 20px;
+  padding-right: 20px;
+}

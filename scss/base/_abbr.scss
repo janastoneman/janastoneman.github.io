@@ -1,0 +1,6 @@
+abbr {
+  &[title] {
+    border-bottom: 1px dotted $silver-gray;
+    cursor: help;
+  }
+}

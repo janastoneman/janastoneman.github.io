@@ -1,0 +1,45 @@
+code,
+pre {
+  border-radius: 3px;
+  color: $charcoal-gray;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: 12px;
+  padding: 0 3px 2px;
+}
+
+code {
+  background-color: $alabaster-gray;
+  border: 1px solid $iron-gray;
+  color: $alternate-red;
+  padding: 2px 4px;
+}
+
+pre {
+  background-color: $alabaster-gray;
+  border: 1px solid $one-q-black-bg;
+  border-radius: 4px;
+  display: block;
+  font-size: 12.025px;
+  line-height: 18px;
+  margin: 0 0 9px;
+  padding: 8.5px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+
+  code {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    padding: 0;
+  }
+
+  &.prettyprint {
+    margin-bottom: 18px;
+  }
+}
+
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}

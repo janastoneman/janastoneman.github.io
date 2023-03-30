@@ -1,0 +1,131 @@
+.full-sidebar {
+  @include tablet {
+    background: $iron-gray;
+    border-bottom: 1px solid $nobel-gray;
+    border-top: 1px solid $nobel-gray;
+    display: none;
+    margin: -10px -10px 10px;
+    overflow: hidden;
+    padding: 0 8px;
+
+    .sidenav-show,
+    .sidenav-hide {
+      display: block;
+      margin: 0 -10px;
+      position: relative;
+      top: -26px;
+    }
+
+    .well {
+      background: $iron-gray;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      &:first-child {
+        margin-bottom: 0;
+      }
+    }
+
+    li {
+      @include below-desktop {
+        padding: 5px 15px;
+      }
+      border-bottom: 1px solid $silver-gray;
+      font-size: 16px;
+      padding: 5px 0;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+
+    .dropdown-menu > li {
+      border: 0;
+    }
+
+    &.-show {
+      animation: push-down .2s ease-in;
+      display: block;
+    }
+
+    &.-hide {
+      animation: push-up .2s ease-in;
+      max-height: 0;
+    }
+  }
+
+  margin-right: 30px;
+}
+
+@include tablet {
+  // Wraps mob-sidebar and full-sidebar
+  .row-fluid {
+    > .sidebar-wrapper {
+      &[class*='span'] {
+        margin: -8px 0 10px;
+      }
+    }
+  }
+
+  .sidebar-wrapper {
+    @include tablet {
+      margin: -10px 0 10px;
+    }
+
+    .full-sidebar {
+      margin: 0 -10px;
+    }
+
+    .mob-sidebar {
+      margin: 0 -10px;
+    }
+  }
+}
+
+.mob-sidebar {
+  @include tablet {
+    align-items: center;
+    display: flex;
+    padding: 0;
+
+    strong {
+      margin: 6.5px auto;
+      width: 80%;
+    }
+  }
+
+  background-color: $white;
+  border-bottom: 1px solid $iron-gray;
+  color: $thunder-black;
+  display: none;
+  font-size: 18px;
+  margin: -10px -10px 10px;
+  padding: 5px;
+  text-align: center;
+
+  .sidebar-menu {
+    float: left; // Flexbox fallback
+
+    img {
+      border-right: 1px solid $iron-gray;
+      width: 40px;
+    }
+  }
+}
+
+.nav-callout {
+  margin: 2em 0;
+}
+
+.nav-selected {
+  background-color: $alabaster-gray;
+}
+
+.sidebar-nav-heading {
+  font-family: $primary-font;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}

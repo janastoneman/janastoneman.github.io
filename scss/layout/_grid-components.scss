@@ -1,0 +1,343 @@
+//-----------------------------
+// For Grid Related Components
+//_____________________________
+
+//autoprefixer: off
+.grid,
+.grid-row {
+  display: grid;
+}
+
+.grid {
+  grid-column-gap: .1em;
+  grid-row-gap: .1em;
+}
+
+// Bootstrap row-fluid and span overrides
+// EXCEPTION: Important is permitted in this file for override purposes.
+// sass-lint:disable no-important
+.grid-row {
+  @include tablet {
+    grid-column-gap: 1em;
+
+    &.grid-column-gap-two-em,
+    &.grid-gap-two-em {
+      grid-column-gap: 1em;
+    }
+  }
+  grid-column-gap: 2em;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(12, 1fr);
+
+  .span1 {
+    grid-column: span 1;
+  }
+
+  .span2 {
+    grid-column: span 2;
+  }
+
+  .span3 {
+    grid-column: span 3;
+  }
+
+  .span4 {
+    grid-column: span 4;
+  }
+
+  .span5 {
+    grid-column: span 5;
+  }
+
+  .span6 {
+    grid-column: span 6;
+  }
+
+  .span7 {
+    grid-column: span 7;
+  }
+
+  .span8 {
+    grid-column: span 8;
+  }
+
+  .span9 {
+    grid-column: span 9;
+  }
+
+  .span10 {
+    grid-column: span 10;
+  }
+
+  .span11 {
+    grid-column: span 11;
+  }
+
+  .span12,
+  .grid-row {
+    grid-column: span 12;
+  }
+
+  > [class*='span'] {
+    @include tablet {
+      grid-column: span 12;
+      margin-right: unset;
+    }
+
+    float: unset !important;
+    margin-left: unset !important;
+    max-width: 100%;
+    width: unset !important;
+  }
+
+  &.container {
+    &::before,
+    &::after {
+      content: unset;
+    }
+  }
+}
+
+@each $position in $grid-positions {
+  .grid-justify-items-#{$position} {
+    justify-items: $position;
+  }
+
+  .grid-justify-self-#{$position} {
+    justify-self: $position;
+  }
+
+  .grid-justify-content-#{$position} {
+    justify-content: $position;
+  }
+
+  .grid-align-items-#{$position} {
+    align-items: $position;
+  }
+
+  .grid-align-self-#{$position} {
+    align-items: $position;
+    align-self: $position;
+  }
+}
+
+@include above-tablet {
+  .grid-three-columns-md {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-four-columns-md {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .grid-five-columns-md {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .grid-four-rows-md {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .grid-flow-column-md {
+    grid-auto-flow: column;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .grid-three-columns-sm {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-four-columns-sm {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .grid-five-columns-sm {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .grid-four-rows-sm {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .grid-flow-column-sm {
+    grid-auto-flow: column;
+  }
+}
+//autoprefixer: on
+
+//----------------------------
+// TWO-COLUMN GRID SETUP
+//____________________________
+
+.two-column-grid {
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+//----------------------------
+// THREE-COLUMN GRID SETUP
+//____________________________
+
+.three-column-grid {
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  @include above-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+//----------------------------
+// FOUR-COLUMN GRID SETUP
+//____________________________
+
+.four-column-grid {
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  @include above-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+//----------------------------
+// FIVE-COLUMN GRID SETUP
+//____________________________
+
+.five-column-grid {
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  @include above-tablet {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+//----------------------------
+// FIVE-COLUMN GRID SETUP
+//____________________________
+
+.six-column-grid {
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+  @include above-tablet {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 510px) {
+  .single-column-grid-mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+//----------------------------
+// GRID COLUMN AND ROW GAPS
+//____________________________
+.grid-gap-two-em {
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+}
+
+.grid-column-gap-two-em {
+  grid-column-gap: 2em;
+}
+
+.grid-row-gap-two-em {
+  grid-row-gap: 2em;
+}
+
+.grid-gap-one-em {
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+}
+
+.grid-column-gap-one-em {
+  grid-column-gap: 1em;
+}
+
+.grid-row-gap-one-em {
+  grid-row-gap: 1em;
+}
+
+.grid-gap-half-em {
+  grid-column-gap: .5em;
+  grid-row-gap: .5em;
+}
+
+.grid-column-gap-half-em {
+  grid-column-gap: .5em;
+}
+
+.grid-row-gap-half-em {
+  grid-row-gap: .5em;
+}
+
+.grid-gap-5px {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.grid-column-gap-5px {
+  grid-column-gap: 5px;
+}
+
+.grid-row-gap-5px {
+  grid-row-gap: 5px;
+}
+
+.grid-gap-none {
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+
+.grid-column-gap-none {
+  grid-column-gap: 0;
+}
+
+.grid-row-gap-none {
+  grid-row-gap: 0;
+}
+
+// set all items in the grid to be the height of the tallest item
+.grid-auto-rows {
+  grid-auto-rows: 1fr;
+}

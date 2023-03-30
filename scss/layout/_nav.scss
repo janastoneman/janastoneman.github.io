@@ -1,0 +1,98 @@
+// The .nav object comes from Bootstrap.
+// It is extended by components like nav-pills, nav-tabs, and nav-list.
+// It is designed mobile-first. Its elements stack vertically.
+
+.nav {
+  font-family: $primary-font;
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0 $nav-horizontal-padding;
+
+  .open {
+    &.active {
+      .caret {
+        border-bottom-color: $white;
+        border-top-color: $white;
+        filter: alpha(opacity=100);
+        opacity: 1;
+      }
+    }
+
+    .caret {
+      border-bottom-color: $white;
+      border-top-color: $white;
+      filter: alpha(opacity=100);
+      opacity: 1;
+
+      &:hover {
+        border-bottom-color: $white;
+        border-top-color: $white;
+        filter: alpha(opacity=100);
+        opacity: 1;
+      }
+    }
+  }
+
+  & > li > a {
+    display: block;
+    margin-left: -$nav-horizontal-padding;
+    margin-right: -$nav-horizontal-padding;
+    padding: 3px $nav-horizontal-padding;
+    // The margin and padding are opposites, allowing the link's padding
+    // to fill the empty space provided by the .nav's padding.
+  }
+
+  // Stacked variant
+
+  &.nav-stacked > li {
+    float: none;
+  }
+
+  &.nav-stacked > li > a {
+    margin-right: 0;
+  }
+
+  > .open {
+    &.active > a {
+      &:hover {
+        background-color: $half-black-bg;
+        border-color: $half-black-bg;
+        color: $white;
+      }
+    }
+  }
+}
+
+.dropdown {
+  &.active {
+    > a {
+      &:hover {
+        color: $thunder-black;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// The rest don't belong here, but are staying until I figure out how best to refactor them.
+
+.nav-tabs {
+  .open {
+    .dropdown-toggle {
+      background-color: $half-black-bg;
+      border-color: $half-black-bg;
+      color: $white;
+    }
+  }
+}
+
+.nav-pills {
+  .open {
+    .dropdown-toggle {
+      background-color: $half-black-bg;
+      border-color: $half-black-bg;
+      color: $white;
+    }
+  }
+}

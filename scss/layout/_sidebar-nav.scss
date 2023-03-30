@@ -1,0 +1,17 @@
+// A simple container that mostly affects the components within it.
+
+.sidebar-nav,
+.department-nav {
+  margin: 0;
+  padding: 0;
+
+  h2 {
+    font-size: 115%;
+    margin: 0 12px;
+    padding: 0;
+  }
+
+  li + li {
+    margin: 0;
+  }
+}

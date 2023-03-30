@@ -1,0 +1,17 @@
+// This file is for mixins needed before variables are defined.
+// None of these mixins should rely on external variable definitions.
+
+
+// Copied from Bootstrap 4
+@mixin _assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    // @warn is kept in comments in case future testing necessitates its use.
+    // @if $prev-num != null and $prev-num >= $num {
+    //   @warn 'Invalid value for #{$map-name}: This map must be in ascending order, but key \'#{$key}\' has value #{$num} which isn\'t greater than #{$prev-num}, the value of the previous key \'#{$prev-key}\' !';
+    // }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}

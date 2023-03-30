@@ -1,0 +1,72 @@
+// From Bootstrap.
+// Generally speaking, you'd put this on a div.
+
+.well {
+  background-color: $iron-gray;
+  min-height: 20px;
+  padding: 19px;
+
+  blockquote {
+    border-color: $one-q-black-bg;
+  }
+
+  .well-large {
+    padding: 24px;
+  }
+
+  p {
+    margin: 10px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .dark-gray-panel-heading {
+    background: $thunder-black;
+    color: $alabaster-gray;
+    line-height: 1em;
+    margin: 0;
+
+    a {
+      color: $alabaster-gray;
+      text-decoration: none;
+    }
+  }
+
+  .majors-heading-red {
+    color: $thunderbird-red;
+    font-family: $primary-font-condensed;
+    padding: 0;
+
+    a {
+      color: $thunderbird-red;
+      text-decoration: none;
+    }
+  }
+
+  .majors-heading-gray {
+    color: $dove-gray;
+    font-family: $primary-font-condensed;
+    padding: 0;
+
+    a {
+      color: $dove-gray;
+      text-decoration: none;
+    }
+  }
+}
+
+.well-small {
+  padding: 9px;
+}
+
+.stats-well {
+  border: 0;
+  border-left: 6px solid $thunderbird-red;
+  box-shadow: none;
+}

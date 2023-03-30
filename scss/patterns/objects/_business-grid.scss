@@ -1,0 +1,61 @@
+.business-nab {
+  h3 {
+    margin-top: 10px;
+  }
+
+  .row-fluid {
+    width: auto;
+  }
+}
+
+.business-nab-grid {
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 'chair' 'board-seperator' 'board' 'emeriti-seperator' 'emeriti';
+  grid-template-columns: 1fr;
+
+  .board-seperator {
+    grid-area: board-seperator;
+  }
+
+  .emeriti-seperator {
+    grid-area: board-seperator;
+  }
+
+  .business-jobtitle {
+    font-style: italic;
+    font-weight: 300;
+  }
+}
+
+.chair-grid {
+  @include tablet {
+    grid-column-gap: 10px;
+  }
+
+  display: grid;
+  grid-area: chair;
+  grid-row-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.board-grid,
+.emeriti-grid {
+  @include tablet {
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.board-grid {
+  grid-area: board;
+}
+
+.emeriti-grid {
+  grid-area: emeriti;
+}

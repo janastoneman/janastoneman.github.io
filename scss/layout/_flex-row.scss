@@ -1,0 +1,118 @@
+// responsive layout for a lot of content, best used with dynamically
+// generated blocks like the directory of people items
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .flex2 {
+    flex: 0 0 calc(14.5% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 20%;
+    }
+  }
+
+  .flex20 {
+    flex: 0 0 calc(20% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 20%;
+    }
+  }
+
+  .flex3,
+  .flex25 {
+    flex: 0 0 calc(25% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 25%;
+    }
+  }
+
+  .flex4,
+  .flex33 {
+    flex: 0 0 calc(33.3333% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 33.3333%;
+    }
+  }
+
+  .flex5 {
+    flex: 0 0 calc(40.170940171000005% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 40.170940171000005%;
+    }
+  }
+
+  .flex6,
+  .flex50 {
+    flex: 0 0 calc(50% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 50%;
+    }
+  }
+
+  .flex7 {
+    flex: 0 0 calc(57.264957265% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 57.264957265%;
+    }
+  }
+
+  .flex8,
+  .flex66 {
+    flex: 0 0 calc(66.666666% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 66.666666%;
+    }
+  }
+
+  .flex9,
+  .flex75 {
+    flex: 0 0 calc(75% - 2.5%);
+
+    &.flex-no-gap {
+      flex: 0 0 75%;
+    }
+  }
+
+  // additional layouts for different breakpoints
+  @include tablet {
+    .flex6-sm,
+    .flex50-sm {
+      flex: 0 0 calc(50% - 4.5%);
+
+      &.flex-no-gap {
+        flex: 0 0 50%;
+      }
+    }
+
+    .flex12-sm,
+    .flex100-sm {
+      flex: 0 0 calc(100% - 20px);
+
+      &.flex-no-gap {
+        flex: 0 0 50%;
+      }
+    }
+  }
+}
+
+.flex-row > [class*='flex'] {
+  @include tablet {
+    margin: 10px;
+  }
+
+  margin: 10px calc(1.25% - 2px);
+  padding: 0 2px;
+
+  &.flex-no-gap {
+    margin: 0;
+  }
+}

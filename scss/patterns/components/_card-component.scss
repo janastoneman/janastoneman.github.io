@@ -1,0 +1,175 @@
+// Card Navigations
+
+$card-padding: 1.5em;
+
+.card-component {
+  background-color: $white;
+  border: 1px solid $silver-gray;
+  display: grid;
+  font-weight: 400;
+  grid-template-rows: min-content;
+  position: unset;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: $card-padding 10px 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 1em;
+  }
+
+  p {
+    color: $charcoal-gray;
+    margin: 0;
+
+    &.h5 {
+      font-weight: 500;
+      padding: 0;
+      transition: color 260ms;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; // sass-lint:disable-line no-misspelled-properties
+    padding: 1.5rem;
+
+    .card-arrow {
+      align-self: flex-end;
+      color: $nobel-gray;
+      height: 20px;
+      line-height: 1;
+      margin-top: auto;
+      position: relative;
+      transition: color 260ms;
+    }
+  }
+
+  .card-img-container {
+    border-radius: $primary-border-radius $primary-border-radius 0 0;
+    overflow: hidden;
+
+    img {
+      background-color: $white;
+      transform: scale(1) translateZ(1px);
+      transition: transform 260ms cubic-bezier(.455, .03, .515, .955);
+      transition-timing-function: cubic-bezier(.455, .03, .515, .955);
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    .card-img-container {
+      img {
+        transform: scale(1.025) translateZ(1px);
+      }
+    }
+  }
+
+  &.highlight-card {
+    @include tablet {
+      width: 90%;
+    }
+
+    margin: 0 auto;
+    max-width: 220px;
+    padding: 25px 5px;
+    width: 100%;
+
+    h5 {
+      padding-bottom: 0;
+    }
+
+    p {
+      margin: 5px 1em;
+
+      &:first-child {
+        margin: $card-padding;
+      }
+    }
+
+    .fal,
+    .fa-brands {
+      color: $thunderbird-red;
+    }
+
+    .majors-heading-gray {
+      text-transform: uppercase;
+    }
+
+    &.highlight-card-animate {
+      // overflow: visible;
+      transform: scale(1);
+      transition-duration: .15s;
+      transition-property: background-color, box-shadow, transform;
+      transition-timing-function: cubic-bezier(.455, .03, .515, .955);
+    }
+  }
+
+  &.highlight-card-alt {
+    background: unset;
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: 10px 15px;
+
+    h3,
+    h4 {
+      margin: 0 0 .5em;
+      padding: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+a {
+  &.cardlink {
+    text-decoration: none;
+  }
+}
+
+.cardlink {
+  display: grid;
+
+  &.well,
+  &.whitewell {
+    display: block;
+  }
+
+  .card-component,
+  &.card-component {
+    align-items: stretch;
+    border: 0;
+    border-radius: $primary-border-radius;
+    box-shadow: $default-shadow;
+    transition: background-color .26s, box-shadow .26s;
+
+    &:hover {
+      background-color: $alabaster-gray;
+      box-shadow: $hover-shadow;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .highlight-card-animate {
+      transform: scale(1.05);
+      z-index: 100;
+    }
+
+    .card-arrow,
+    .h5 {
+      color: $thunderbird-red;
+    }
+  }
+}

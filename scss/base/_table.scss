@@ -1,0 +1,17 @@
+table {
+  // break lines on links to prevent horizontal overflow
+  font-size: inherit;
+
+  a {
+    @include mobile {
+      overflow-wrap: anywhere;
+    }
+
+    @include below-desktop {
+      &[href^='mailto:'] {
+        overflow-wrap: anywhere;
+      }
+    }
+    overflow-wrap: break-word;
+  }
+}

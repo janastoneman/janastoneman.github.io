@@ -1,0 +1,74 @@
+ul,
+ol {
+  margin: 0 0 1em 25px;
+  padding: 0;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+    margin-top: .4em;
+  }
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li + li {
+  margin-top: .8em;
+}
+
+dl {
+  margin-bottom: 18px;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0 0 3px;
+}
+
+dd {
+  margin-left: 9px;
+}
+
+// every dt after the first one needs a top margin
+dt + dd + dt {
+  margin-top: .8em;
+}
+
+// Replace default disclosure triangle with FontAwesome '+' and '-' characters.
+summary {
+  color: $alternate-red;
+  cursor: pointer;
+  font-weight: 500;
+  list-style-type: none;
+  padding-bottom: 10px;
+  text-decoration: underline;
+
+  &:hover {
+    color: $dove-gray;
+  }
+
+  &::before {
+    content: '\f067';
+    display: inline-block;
+    font: normal normal normal 9px/1 'Font Awesome 5 Pro';
+    font-size: .8em;
+    margin-right: 4px;
+    text-rendering: auto;
+  }
+
+  [open] & {
+    &::before {
+      content: '\f068';
+    }
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}

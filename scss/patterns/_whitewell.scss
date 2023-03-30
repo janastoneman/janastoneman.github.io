@@ -1,0 +1,28 @@
+.whitewell {
+  background-color: $white;
+  border: 1px solid $nobel-gray;
+  color: $dove-gray;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 20px;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: -20px -20px 10px;
+    padding: 10px 10px 10px 20px;
+  }
+
+  p {
+    &.large {
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+
+    &.plus-padding {
+      margin: 10px 40px;
+    }
+  }
+}

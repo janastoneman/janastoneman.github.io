@@ -1,0 +1,61 @@
+.full-width {
+  background: $iron-gray;
+  margin-left: calc(-50vw + 50%);
+  width: 100vw;
+
+  &.background-charcoal-gray {
+    background-color: $charcoal-gray;
+  }
+
+  &.background-white {
+    background-color: $white;
+  }
+
+  &.full-width-banner {
+    margin-bottom: 40px;
+    margin-top: -20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .container {
+    @include tablet {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .feature-box {
+    @include tablet {
+      padding: 25px;
+    }
+
+    background: $white;
+    border-radius: $primary-border-radius;
+    padding: 50px;
+  }
+
+  .contact-heading {
+    max-width: 400px;
+  }
+
+  &.lazy-load {
+    // target images lazy-loaded through a module
+    img {
+      border-radius: $primary-border-radius;
+    }
+  }
+}
+
+.split-width-page {
+  .full-width {
+    background: unset;
+    margin-left: unset;
+    width: unset;
+  }
+}

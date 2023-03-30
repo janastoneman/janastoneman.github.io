@@ -1,0 +1,124 @@
+.tuition-calculator {
+  margin: 0 auto;
+  position: relative;
+
+  .btn {
+    text-align: left;
+    width: 90%;
+  }
+
+  .tc-active {
+    border-color: $thunderbird-red;
+    position: relative;
+
+    &::after {
+      color: $thunderbird-red;
+      content: '\f00c';
+      display: inline-block;
+      font-family: 'Font Awesome 5 Pro';
+      position: absolute;
+      right: .5em;
+    }
+  }
+}
+
+.whitewell {
+  &.tc-output-wrapper {
+    @include mobile {
+      height: 240px;
+    }
+  }
+}
+
+.tc-output-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.tc-output {
+  align-items: center;
+  height: 115px;
+  position: relative;
+  right: 200%;
+  top: 25px;
+  transition: right 1s;
+  transition-timing-function: ease-out;
+
+  p {
+    @include mobile {
+      text-align: center;
+    }
+    // line height here messes things up
+    line-height: unset;
+    margin: 0;
+
+    &.tc-output-value {
+      @include mobile {
+        font-size: 3em;
+        text-align: center;
+      }
+
+      font-size: 4em;
+      margin: 0;
+      text-align: right;
+    }
+
+    &.tc-output-text {
+      @include mobile {
+        margin-top: 20px;
+      }
+
+      font-size: 1.2em;
+      line-height: 1.2em;
+      margin-top: -10px;
+    }
+
+    &.tc-disclaimer {
+      font-size: 1.1em;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+
+  &.onscreen {
+    right: 0;
+  }
+
+  &.offscreen {
+    right: 200%;
+  }
+}
+
+.tc-cost-text {
+  @include tablet {
+    bottom: 15%;
+    max-width: 375px;
+  }
+  @include mobile {
+    bottom: 35%;
+  }
+
+  bottom: 35%;
+  font-size: 1.2em;
+  left: 0;
+  line-height: 1.2em;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transition: left 1s;
+  transition-timing-function: ease-out;
+
+  &.onscreen {
+    left: 0;
+  }
+
+  &.offscreen {
+    left: 200%;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}

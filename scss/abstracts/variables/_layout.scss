@@ -1,0 +1,17 @@
+$alignments: (
+  left,
+  center,
+  right
+)
+  !default;
+
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints'); // Spacing values
+$nav-horizontal-padding: 15px; // Configuration
+
+$grid-positions: (
+  start,
+  center,
+  end
+)
+  !default;
+  

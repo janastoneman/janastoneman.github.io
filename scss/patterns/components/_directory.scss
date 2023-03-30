@@ -1,0 +1,166 @@
+.dop-layout-bio {
+  .dop-profile {
+    margin: 20px 0;
+  }
+}
+
+.dop-profile {
+  @include mobile {
+    width: 300px;
+  }
+
+  @include desktop {
+    width: 300px;
+  }
+  background-color: $alabaster-gray;
+  margin: 0 auto;
+  max-width: 300px;
+  position: relative;
+
+  .dop-filler {
+    background-color: $white;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .dop-link {
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    width: 200px;
+
+    a {
+      .dop-icon {
+        transition: box-shadow .3s;
+      }
+
+      &:hover {
+        .dop-icon {
+          box-shadow: 5px 0 5px $thunderbird-red;
+          color: $thunderbird-red;
+          transition: box-shadow .3s;
+        }
+      }
+    }
+  }
+
+  .dop-img {
+    border-radius: 50%;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+    z-index: 5;
+  }
+
+  .dop-icon {
+    background: $white;
+    border-radius: 50%;
+    color: $thunderbird-red;
+    font-size: 2em;
+    height: .9em;
+    position: absolute;
+    right: -10px;
+    top: 85px;
+    width: .7em;
+    z-index: 10;
+
+    &::before {
+      margin-left: -5px;
+    }
+  }
+
+  .dop-info {
+    @include tablet {
+      padding: 10px 40px 40px;
+    }
+
+    font-size: .8em;
+    line-height: 1.25em;
+    padding: 10px 40px 40px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+
+    &.no-img {
+      padding-top: 40px;
+    }
+
+    h5 {
+      font-size: 1.5em;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .dop-title {
+    font-style: italic;
+  }
+
+  .dop-bio {
+    @include tablet {
+      margin-top: 0;
+      padding: 0 40px 30px;
+    }
+
+    margin-top: 100px;
+    padding: 40px 40px 40px 10px;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+// DOP modal
+.dop-modal-header {
+  position: relative;
+  top: 65px;
+}
+
+.dop-modal-info {
+  width: calc(100% - 190px);
+}
+
+.dop-modal-photo {
+  border-radius: 50%;
+  height: 175px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -65px;
+  width: 175px;
+}
+
+.dop-modal-contact-row {
+  margin-bottom: 20px;
+  margin-top: 105px;
+
+  .dop-modal-contact {
+    display: inline-block;
+    margin: 0 15px 15px 0;
+  }
+}
+
+// some people thought it would be a good idea to put a DoP component inside of a modal
+// this messes things up. So we have to fix it.
+
+.modal {
+  .directory-of-people {
+    .grid {
+      &.three-column-grid {
+        @include mobile {
+          grid-template-columns: 1fr;
+        }
+
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

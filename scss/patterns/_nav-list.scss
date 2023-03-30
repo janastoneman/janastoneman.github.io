@@ -1,0 +1,87 @@
+// From Bootstrap.
+// It is designed mobile-first. Its elements stack vertically.
+
+// .nav-list should be used with .nav
+
+@mixin active-links {
+  background-color: $alabaster-gray;
+  color: $thunderbird-red;
+}
+
+%nav-list {
+  // Standard elements
+
+  > li > a {
+    @include transition(background $transition-duration-instant ease-out);
+    background: none;
+    color: $charcoal-gray;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $iron-gray;
+  }
+}
+
+  li {
+    margin-bottom: 0;
+  }
+
+  // Active elements
+
+  > .active > a {
+    background-color: $iron-gray;
+
+    &:hover {
+      background-color: $iron-gray;
+    }
+  }
+
+  // Dropdown menu elements
+
+  .dropdown-menu {
+
+    li > a {
+      &:hover {
+        // This overrides the dropdown-menu component's default style.
+        // TODO: Refactor into a dropdown-menu variant.
+        background-color: $iron-gray;
+        color: $thunderbird-red;
+      }
+    }
+  }
+
+  // Icon element
+
+  [class^='icon-'] {
+    margin-right: 2px;
+  }
+
+  // Divider element
+
+  .divider {
+    background-color: $iron-gray;
+    border-bottom: 1px solid $white;
+    height: 1px;
+    margin: 8px 1px;
+    overflow: hidden;
+  }
+
+  // Large-screen appearance
+
+  @include above-tablet {
+    > .active >,
+    > :hover > {
+      a {
+        @include active-links;
+
+        &:hover {
+          @include active-links;
+        }
+      }
+    }
+  }
+}
+
+.nav-list {
+  @extend %nav-list
+}

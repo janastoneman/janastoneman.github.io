@@ -1,0 +1,132 @@
+// Headings
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: $thunder-black;
+  font-family: $secondary-font;
+  font-weight: bold;
+  letter-spacing: .6px;
+  line-height: 1.3em;
+  margin: 0;
+  text-rendering: optimizelegibility;
+
+  small {
+    color: $dove-gray;
+    font-size: .75em;
+    font-weight: normal;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-weight: 900;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $primary-font;
+  letter-spacing: .6px;
+  line-height: 1.2em;
+}
+
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  padding: 5px 0 20px;
+}
+
+h1,
+.h1 {
+  @include mobile {
+    font-size: 2.15em;
+  }
+
+  color: $thunder-black;
+  font-size: 2.4em;
+  margin: 5px 0 20px;
+
+  a {
+    color: $thunder-black;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.pageheading {
+    margin-bottom: 10px;
+  }
+}
+
+h2,
+.h2 {
+  @include mobile {
+    font-size: 1.8em;
+  }
+
+  font-size: 2em;
+}
+
+h3,
+.h3 {
+  @include mobile {
+    font-size: 1.6em;
+  }
+
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+h4,
+.h4 {
+  @include mobile {
+    font-size: 1.3em;
+  }
+
+  color: $charcoal-gray;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+h5,
+.h5 {
+  @include mobile {
+    font-size: 1.15em;
+  }
+
+  color: $dove-gray;
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+h6,
+.h6 {
+  color: $dove-gray;
+  font-family: $primary-font-condensed;
+  font-size: 1em;
+  font-weight: 700;
+}

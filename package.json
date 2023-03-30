@@ -1,0 +1,39 @@
+{
+  "name": "suu-css",
+  "version": "0.1.0",
+  "repository": "none",
+  "private": true,
+  "license": "",
+  "dependencies": {
+    "browser-sync": "^2.27.9",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^7.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sftp": "^0.1.5",
+    "gulp-size": "^4.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-terser": "^1.1.6",
+    "gulp-util": "^3.0.8",
+    "sass": "^1.57.1"
+  },
+  "browsersList": {
+    "browsers": [
+      "last 3 versions",
+      "ie 10",
+      "ie 11",
+      "> 1% in US"
+    ]
+  },
+  "scripts": {
+    "build": "gulp",
+    "start": "gulp watch"
+  }
+}

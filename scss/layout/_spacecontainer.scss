@@ -1,0 +1,8 @@
+.spacecontainer {
+  @include tablet {
+    padding: 8px 20px;
+  }
+
+  background: $white;
+  padding: 8px 20px;
+}

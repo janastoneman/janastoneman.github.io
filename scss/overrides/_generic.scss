@@ -1,0 +1,159 @@
+// This file is for "overrides:" styles that should override everything else. Try
+// to keep "!important" limited to this file, and on intentional classes rather
+// than as a specificity fix for problems.
+
+// EXCEPTION: Important is permitted in this file for override purposes. See further explanation above
+// sass-lint:disable no-important
+.navbar-fixed-top {
+  @include tablet {
+    // --- Tyler Mumford TM ---
+    // Temporary fix to prevent the need for horizontal scrolling on mobile.
+    // Related to boostrap.css:4250;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Floats (with margin to prevent text collision)
+.float-left {
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+
+.float-right {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+.nofloat {
+  float: none;
+}
+
+.max-width-50 {
+  max-width: 50%;
+}
+
+// Filters
+.grayscale {
+  filter: grayscale(1);
+}
+
+// Typography
+.small {
+  font-size: 85%;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+
+// Remove margins
+.nomargin-left {
+  margin-left: 0 !important;
+}
+
+.nomargin-right {
+  margin-right: 0 !important;
+}
+
+.nomargin-top {
+  margin-top: 0 !important;
+}
+
+.nomargin-bottom {
+  margin-bottom: 0 !important;
+}
+
+@include tablet {
+  // TODO: Build other hide and show classes for more breakpoints.
+  .small-no-display {
+    display: none;
+  }
+}
+
+// Employer Directory Overrides
+.filter-form-container {
+  display: none;
+}
+
+.employer-directory-legend {
+  border-bottom: 0 !important;
+  font-size: 14px !important;
+  line-height: 36px;
+  margin-bottom: 0 !important;
+}
+
+table {
+  &.employer-table {
+    td {
+      vertical-align: middle !important;
+    }
+
+    .label {
+      line-height: 2rem;
+    }
+  }
+}
+
+.directory-label {
+  cursor: pointer;
+  line-height: 2 !important;
+}
+
+.directory-label-noclick {
+  cursor: unset;
+}
+
+// override default spacing for anchor links
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -130px;
+  visibility: hidden;
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    top: -48px;
+  }
+}
+
+// make .sr-only visible and use it as a tooltip with tne icon is hovered
+.program-finder {
+  td {
+    .program-check {
+      &:hover + .sr-only {
+        background: $white;
+        border: 1px solid $iron-gray;
+        border-radius: 4px;
+        box-shadow: 1px 1px 2px $iron-gray;
+        clip: unset;
+        color: $thunder-black;
+        display: block;
+        font-family: $primary-font;
+        font-size: .85em;
+        height: auto;
+        margin: 0 0 0 -50px;
+        padding: 2px;
+        position: absolute;
+        width: auto;
+      }
+    }
+  }
+}
+
+// google search engine styles //
+// EXCEPTION: Class name is defined by Google and cannot be changed.
+.gsc-webResult { // sass-lint:disable-line class-name-format
+  &.gsc-result {
+    padding-left: 5px !important;
+
+    > div {
+      padding-left: 0 !important;
+    }
+  }
+}

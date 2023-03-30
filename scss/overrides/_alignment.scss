@@ -1,0 +1,27 @@
+// EXCEPTION: the no-important rule should be ignored in this file because it exists to override default alignment of elements.
+// sass-lint:disable no-important
+// Alignment
+
+
+.centerit {
+  text-align: center !important;
+}
+
+@each $dir in $alignments {
+  .#{$dir}align {
+    text-align: $dir !important;
+  }
+  @each $bp in map-keys($grid-breakpoints) {
+    .#{$dir}-#{$bp}-up {
+      @include media-breakpoint-up($bp) {
+        text-align: $dir !important;
+      }
+    }
+
+    .#{$dir}-#{$bp}-down {
+      @include media-breakpoint-down($bp) {
+        text-align: $dir !important;
+      }
+    }
+  }
+}

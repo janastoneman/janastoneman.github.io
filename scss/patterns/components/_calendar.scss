@@ -1,0 +1,257 @@
+.calendar-controls {
+  margin-bottom: 10px;
+
+  input,
+  button {
+    margin: 0;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    top: 2px;
+  }
+
+  .btn {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu {
+    li {
+      padding: 0 0 0 15px;
+      text-align: left;
+    }
+  }
+
+  .calendar-date-select {
+    padding-left: 15px;
+    position: relative;
+    text-align: left;
+
+    &::after {
+      color: $thunderbird-red;
+      content: '\f274';
+      display: inline-block;
+      font-family: 'Font Awesome 5 Pro';
+      font-weight: 500;
+      padding: .8em 1em;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .input-append {
+    &.input-append-block {
+      button {
+        height: 100%;
+        right: 0;
+      }
+
+      input {
+        background-clip: padding-box;
+      }
+    }
+  }
+}
+
+.suu-calendar {
+  margin: 0;
+
+  a {
+    margin-bottom: 15px;
+  }
+
+  .cardlink {
+    border-radius: $primary-border-radius;
+    box-shadow: $default-shadow;
+    padding: 0;
+    transition: box-shadow .3s;
+
+    &:hover {
+      box-shadow: $hover-shadow;
+    }
+  }
+
+  .template {
+    border-radius: $primary-border-radius;
+    min-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+
+    // override the shadow for the card since it's applied to the whole event item
+    .card {
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .whitewell {
+    border: 0;
+    margin-bottom: 0;
+    padding: 30px 20px;
+  }
+
+  .event-date {
+    float: left;
+
+    div {
+      margin: 10px 15px 15px;
+      text-align: center;
+    }
+
+    .event-day {
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+
+    .event-month {
+      color: $font-color;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+
+  .event-name {
+    color: $charcoal-gray;
+    font-size: 1.1em;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .event-image {
+    float: left;
+    margin: 2px 8px 2px 5px;
+
+    img {
+      height: 80px;
+    }
+  }
+
+  .event-calendar {
+    @include mobile {
+      padding: 5px 20px;
+    }
+
+    background: $iron-gray;
+    border: 1px solid $iron-gray;
+    border-radius: 0 0 $primary-border-radius $primary-border-radius;
+    padding: 5px 100px 5px 20px;
+  }
+
+  .event-icon {
+    @include mobile {
+      display: none;
+    }
+
+    border-radius: 50%;
+    bottom: -50px;
+    height: 75px;
+    position: absolute;
+    right: 0;
+
+    &.event-icon-lift {
+      bottom: -20px;
+    }
+  }
+
+  .event-information {
+    height: 90px;
+    position: relative;
+
+    div {
+      display: block;
+      padding: 2px 0;
+    }
+
+    .event-desc,
+    .event-add {
+      display: none;
+    }
+
+    .event-location {
+      @include mobile {
+        margin-right: unset;
+      }
+
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      color: $stone-gray;
+      display: -webkit-box;
+      font-size: .9em;
+      font-style: italic;
+      margin-right: 80px;
+      overflow: hidden;
+      white-space: normal;
+    }
+  }
+
+  .event-name,
+  .event-time,
+  .event-location,
+  .event-desc,
+  .event-calendar {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.top-event-nav {
+  .btn {
+    font-weight: 700;
+  }
+}
+
+.modal-info {
+  display: inline-block;
+  margin: 0 15px 15px 0;
+
+  span {
+    color: $thunderbird-red;
+  }
+}
+
+.modal-desc {
+  margin: 15px 0 30px;
+}
+
+.modal-calendar-info {
+  @include tablet {
+    margin-top: -30px;
+    right: 20px;
+  }
+  position: absolute;
+  right: 65px;
+  width: 85%;
+
+  .calendar-name {
+    color: $charcoal-gray;
+    display: block;
+    font-style: italic;
+    overflow-x: hidden;
+    position: relative;
+    text-align: right;
+    text-overflow: ellipsis;
+    top: 65px;
+    white-space: nowrap;
+    width: calc(100% - 115px);
+  }
+
+  .calendar-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    img {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
