@@ -3,7 +3,8 @@ header {
     display: grid;
     font-family: $secondary-font;
     grid-template-columns: repeat(3, 1fr);
-    height: 125px;
+    height: 175px;
+    margin-bottom: 2em;
     text-transform: uppercase;
     width: 100%;
 

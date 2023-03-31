@@ -1,0 +1,59 @@
+main {
+  .preview {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: .55fr .45fr;
+    text-align: center;
+
+    .image {
+      margin: 1.5em 0 0 1.5em;
+      position: relative;
+      z-index: 5;
+
+      &.yellow:before {
+        background-color: $color-yellow;
+      }
+
+      &.green:before {
+        background-color: $color-green;
+      }
+
+      &.red:before {
+        background-color: $color-red;
+      }
+
+      &.blue:before {
+        background-color: $color-blue;
+      }
+
+      &:before {
+        content: '';
+        height: 100%;
+        left: -1.5em;
+        position: absolute;
+        top: -1.5em;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    h2 {
+      text-decoration: underline;
+      text-underline-offset: .5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 2em;
+    }
+  }
+
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+}
+
+img {
+  width: 100%;
+}
