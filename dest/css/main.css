@@ -23,7 +23,7 @@ header {
   font-family: "Lusitana", serif;
   grid-template-columns: repeat(3, 1fr);
   height: 175px;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
   text-transform: uppercase;
   width: 100%;
 }
