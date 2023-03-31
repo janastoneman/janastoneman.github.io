@@ -30,24 +30,6 @@ header a {
 header nav {
   justify-self: left;
 }
-header nav a {
-  position: relative;
-}
-header nav a:after {
-  background-color: #3c3c3c;
-  bottom: 0;
-  content: "";
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  transition: opacity 0.3s, bottom 0.3s;
-  width: 100%;
-}
-header nav a:hover:after {
-  opacity: 100%;
-  bottom: -0.25em;
-}
 header nav ul {
   list-style-type: none;
   margin: 0;
@@ -64,6 +46,27 @@ header .logo {
   font-size: 2em;
   justify-self: center;
   position: relative;
+}
+header nav a,
+header .logo a {
+  position: relative;
+}
+header nav a:after,
+header .logo a:after {
+  background-color: #3c3c3c;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s, bottom 0.3s;
+  width: 100%;
+}
+header nav a:hover:after,
+header .logo a:hover:after {
+  opacity: 100%;
+  bottom: -0.25em;
 }
 header .social-links {
   justify-self: right;

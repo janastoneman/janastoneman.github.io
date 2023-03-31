@@ -15,6 +15,30 @@ header {
     nav {
         justify-self: left;
 
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline;
+
+                + li {
+                    margin-left: 1em;
+                }
+            }
+        }
+    }
+
+    .logo {
+        bottom: 32px;
+        font-size: 2em;
+        justify-self: center;
+        position: relative;
+    }
+
+    nav,
+    .logo {
         a {
             position: relative;
             &:after {
@@ -36,27 +60,6 @@ header {
                 }
             }
         }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-
-            li {
-                display: inline;
-
-                + li {
-                    margin-left: 1em;
-                }
-            }
-        }
-    }
-
-    .logo {
-        bottom: 32px;
-        font-size: 2em;
-        justify-self: center;
-        position: relative;
     }
 
     .social-links {
