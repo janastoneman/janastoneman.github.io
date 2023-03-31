@@ -6,6 +6,7 @@
 html {
   background-color: #fef7e2;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
 }
 
@@ -83,6 +84,7 @@ header .social-links a + a {
 }
 
 main .preview {
+  align-items: center;
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 0.55fr 0.45fr;
@@ -114,30 +116,48 @@ main .preview .image:before {
   width: 100%;
   z-index: -1;
 }
-main .preview h2 {
+main .preview .content {
+  align-content: center;
+  display: grid;
+  height: 100%;
+  position: relative;
+}
+main .preview .content h2 {
   margin: 0 auto;
   padding-bottom: 0.5em;
   width: fit-content;
 }
-main .preview h2.blue {
-  border-bottom: 2px solid #2c435e;
+main .preview .content h2.blue {
+  border-bottom: 3px solid #2c435e;
 }
-main .preview h2.red {
+main .preview .content h2.red {
   border-bottom: 2px solid #be1643;
 }
-main .preview h2.yellow {
+main .preview .content h2.yellow {
   border-bottom: 2px solid #ffc000;
 }
-main .preview h2.green {
+main .preview .content h2.green {
   border-bottom: 2px solid #2b8275;
 }
-main .preview p {
+main .preview .content p {
   font-size: 1.5em;
   margin-top: 2em;
+}
+main .preview .content .pattern {
+  bottom: 5px;
+  position: absolute;
+  width: 50vw;
 }
 main a {
   color: unset;
   text-decoration: none;
+}
+main .pattern {
+  height: 40px;
+  width: 100%;
+}
+main .pattern.yellow {
+  background-image: url("/images/pattern-yellow.png");
 }
 
 img {

@@ -1,5 +1,6 @@
 main {
   .preview {
+    align-items: center;
     display: grid;
     grid-gap: 2em;
     grid-template-columns: .55fr .45fr;
@@ -37,34 +38,56 @@ main {
       }
     }
 
-    h2 {
-      margin: 0 auto;
-      padding-bottom: .5em;
-      width: fit-content;
+    .content {
+      align-content: center;
+      display: grid;
+      height: 100%;
+      position: relative;
 
-      &.blue {
-        border-bottom: 2px solid $color-blue;
-      }
-      &.red {
-        border-bottom: 2px solid $color-red;
-      }
-      &.yellow {
-        border-bottom: 2px solid $color-yellow;
-      }
-      &.green {
-        border-bottom: 2px solid $color-green;
-      }
-    }
+      h2 {
+        margin: 0 auto;
+        padding-bottom: .5em;
+        width: fit-content;
 
-    p {
-      font-size: 1.5em;
-      margin-top: 2em;
+        &.blue {
+          border-bottom: 3px solid $color-blue;
+        }
+        &.red {
+          border-bottom: 2px solid $color-red;
+        }
+        &.yellow {
+          border-bottom: 2px solid $color-yellow;
+        }
+        &.green {
+          border-bottom: 2px solid $color-green;
+        }
+      }
+
+      p {
+        font-size: 1.5em;
+        margin-top: 2em;
+      }
+
+      .pattern {
+        bottom: 5px;
+        position: absolute;
+        width: 50vw;
+      }
     }
   }
 
   a {
     color: unset;
     text-decoration: none;
+  }
+
+  .pattern {
+    height: 40px;
+    width: 100%;
+
+    &.yellow {
+      background-image: url("/images/pattern-yellow.png");
+    }
   }
 }
 
