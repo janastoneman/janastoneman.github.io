@@ -115,8 +115,21 @@ main .preview .image:before {
   z-index: -1;
 }
 main .preview h2 {
-  text-decoration: underline;
-  text-underline-offset: 0.5em;
+  margin: 0 auto;
+  padding-bottom: 0.5em;
+  width: fit-content;
+}
+main .preview h2.blue {
+  border-bottom: 2px solid #2c435e;
+}
+main .preview h2.red {
+  border-bottom: 2px solid #be1643;
+}
+main .preview h2.yellow {
+  border-bottom: 2px solid #ffc000;
+}
+main .preview h2.green {
+  border-bottom: 2px solid #2b8275;
 }
 main .preview p {
   font-size: 1.5em;

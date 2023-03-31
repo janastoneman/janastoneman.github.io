@@ -38,8 +38,22 @@ main {
     }
 
     h2 {
-      text-decoration: underline;
-      text-underline-offset: .5em;
+      margin: 0 auto;
+      padding-bottom: .5em;
+      width: fit-content;
+
+      &.blue {
+        border-bottom: 2px solid $color-blue;
+      }
+      &.red {
+        border-bottom: 2px solid $color-red;
+      }
+      &.yellow {
+        border-bottom: 2px solid $color-yellow;
+      }
+      &.green {
+        border-bottom: 2px solid $color-green;
+      }
     }
 
     p {
