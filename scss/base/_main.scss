@@ -9,6 +9,7 @@ main {
     .image {
       margin: 1.5em 0 0 1.5em;
       position: relative;
+      transition: margin .3s;
       z-index: 5;
 
       &.yellow:before {
@@ -36,6 +37,11 @@ main {
         width: 100%;
         z-index: -1;
       }
+
+      img {
+        transform: scale(1);
+        transition: transform .3s;
+      }
     }
 
     .content {
@@ -45,21 +51,25 @@ main {
       position: relative;
 
       h2 {
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
         margin: 0 auto;
         padding-bottom: .5em;
+        transform: scale(1);
+        transition: transform .3s;
         width: fit-content;
 
         &.blue {
-          border-bottom: 3px solid $color-blue;
+          border-bottom-color: $color-blue;
         }
         &.red {
-          border-bottom: 2px solid $color-red;
+          border-bottom-color: $color-red;
         }
         &.yellow {
-          border-bottom: 2px solid $color-yellow;
+          border-bottom-color: $color-yellow;
         }
         &.green {
-          border-bottom: 2px solid $color-green;
+          border-bottom-color: $color-green;
         }
       }
 
@@ -70,8 +80,22 @@ main {
 
       .pattern {
         bottom: 5px;
+        left: 0;
         position: absolute;
-        width: 50vw;
+        transition: left .3s;
+        width: 100vw;
+      }
+    }
+
+    &:hover {
+      .image img {
+        transform: scale(1.025);
+      }
+      h2 {
+        transform: scale(1.025);
+      }
+      .pattern {
+        left: -5vw;
       }
     }
   }

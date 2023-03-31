@@ -93,6 +93,7 @@ main .preview {
 main .preview .image {
   margin: 1.5em 0 0 1.5em;
   position: relative;
+  transition: margin 0.3s;
   z-index: 5;
 }
 main .preview .image.yellow:before {
@@ -116,6 +117,10 @@ main .preview .image:before {
   width: 100%;
   z-index: -1;
 }
+main .preview .image img {
+  transform: scale(1);
+  transition: transform 0.3s;
+}
 main .preview .content {
   align-content: center;
   display: grid;
@@ -123,21 +128,25 @@ main .preview .content {
   position: relative;
 }
 main .preview .content h2 {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
   margin: 0 auto;
   padding-bottom: 0.5em;
+  transform: scale(1);
+  transition: transform 0.3s;
   width: fit-content;
 }
 main .preview .content h2.blue {
-  border-bottom: 3px solid #2c435e;
+  border-bottom-color: #2c435e;
 }
 main .preview .content h2.red {
-  border-bottom: 2px solid #be1643;
+  border-bottom-color: #be1643;
 }
 main .preview .content h2.yellow {
-  border-bottom: 2px solid #ffc000;
+  border-bottom-color: #ffc000;
 }
 main .preview .content h2.green {
-  border-bottom: 2px solid #2b8275;
+  border-bottom-color: #2b8275;
 }
 main .preview .content p {
   font-size: 1.5em;
@@ -145,8 +154,19 @@ main .preview .content p {
 }
 main .preview .content .pattern {
   bottom: 5px;
+  left: 0;
   position: absolute;
-  width: 50vw;
+  transition: left 0.3s;
+  width: 100vw;
+}
+main .preview:hover .image img {
+  transform: scale(1.025);
+}
+main .preview:hover h2 {
+  transform: scale(1.025);
+}
+main .preview:hover .pattern {
+  left: -5vw;
 }
 main a {
   color: unset;
