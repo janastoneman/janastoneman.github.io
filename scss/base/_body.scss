@@ -1,24 +1,9 @@
+html {
+    background-color: $color-cream;
+    margin: 0;
+    padding: 0;
+}
 body {
-  @include above-tablet {
-    margin-bottom: 505px;
-  }
-
-  @include tablet {
-    margin: 93px 0 0;
-  }
-
-  @include mobile {
-    margin-top: 83px;
-  }
-
-  background: $white;
-  color: $font-color;
-  font-family: $primary-font;
-  font-size: $primary-font-size;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: .4px;
-  line-height: $primary-line-height;
-  margin-top: 134px;
-  overflow-x: hidden;
+    margin: 0 auto;
+    max-width: 1400px;
 }

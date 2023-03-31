@@ -50,6 +50,12 @@ header .logo {
 header .social-links {
   justify-self: right;
 }
+header .social-links a {
+  color: #2c435e;
+}
+header .social-links a + a {
+  margin-left: 1em;
+}
 
 em {
   font-style: italic;

@@ -1,49 +1,7 @@
 // Primary colors
-$thunderbird-red: #e81727; // Bright navbar red
-$alternate-red: #c41425;
-$alternate-red-dark: darken($alternate-red, 10%); // Don't use for links
-$white: #fff; // Doesn't have to be perfectly white.
-$thunder-black: #000; // SUU Black as defined by marketing
-// Secondary colors (grays, backgrounds, etc.)
-$charcoal-gray: #3c3c3c;
-$dove-gray: #575351;
-$font-color: $charcoal-gray;
-$stone-gray: #787979;
-$nobel-gray: #999;
-$silver-gray: #c6c6c5;
-$iron-gray: #e7e7e7;
-$alabaster-gray: #f8f8f8;
-// off-brand or alt colors
-$light-blue: #add8e6;
-$cardlink-color: #546060;
-$green: #79af42;
-$yellow: #ffc610;
-
-// transparent colors
-// // red
-$eighty-five-percent-thunderbird-red: rgba(233, 29, 45, .85);
-// // grays
-$transparent-charcoal: rgba(60, 60, 60, .9);
-$transparent-alabaster: rgba(248, 248, 248, .77);
-$transparent-iron: rgba(231, 231, 231, .77);
-// // white
-$transparent-white: rgba(255, 255, 255, 0);
-$one-q-white-bg: rgba(255, 255, 255, .25);
-$half-white-bg: rgba(255, 255, 255, .5);
-$three-q-white-bg: rgba(255, 255, 255, .75);
-$eighty-percent-white: rgba(255, 255, 255, .8);
-$ninety-percent-white: rgba(255, 255, 255, .9);
-// // black
-$very-light-black: rgba(0, 0, 0, .05);
-$one-q-black-bg: rgba(0, 0, 0, .25);
-$half-black-bg: rgba(0, 0, 0, .5);
-$sixty-percent-black: rgba(0, 0, 0, .6);
-$three-q-black-bg: rgba(0, 0, 0, .75);
-$eighty-black-bg: rgba(0, 0, 0, .8);
-$muted-bg: #fff; // Suitable for being a backdrop to black text.
-$muted-bg-shadow: lighten($thunder-black, 50%); // Suitable text-shadow for use on top of $muted-bg.
-// Clickable element shadows
-
-$default-darken: 10%;
-$color-dark: $thunder-black;
-$color-dark-dark: darken($color-dark, 10%);
+$color-black: #3c3c3c;
+$color-cream: #fef7e2;
+$color-green: #2b8275;
+$color-red: #be1643;
+$color-blue: #2c435e;
+$color-yellow: #ffc000;
