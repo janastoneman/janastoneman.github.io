@@ -88,10 +88,10 @@ main .preview {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 0.55fr 0.45fr;
+  margin-bottom: 8em;
   text-align: center;
 }
 main .preview .image {
-  margin: 1.5em 0 0 1.5em;
   position: relative;
   transition: margin 0.3s;
   z-index: 5;
@@ -111,7 +111,6 @@ main .preview .image.blue:before {
 main .preview .image:before {
   content: "";
   height: 100%;
-  left: -1.5em;
   position: absolute;
   top: -1.5em;
   width: 100%;
@@ -125,6 +124,7 @@ main .preview .content {
   align-content: center;
   display: grid;
   height: 100%;
+  order: 2;
   position: relative;
 }
 main .preview .content h2 {
@@ -154,9 +154,7 @@ main .preview .content p {
 }
 main .preview .content .pattern {
   bottom: 5px;
-  left: 0;
   position: absolute;
-  transition: left 0.3s;
   width: 100vw;
 }
 main .preview:hover .image img {
@@ -165,8 +163,40 @@ main .preview:hover .image img {
 main .preview:hover h2 {
   transform: scale(1.025);
 }
-main .preview:hover .pattern {
+main .preview:nth-of-type(odd) .image {
+  margin: 1.5em 0 0 1.5em;
+  order: 1;
+}
+main .preview:nth-of-type(odd) .image:before {
+  left: -1.5em;
+}
+main .preview:nth-of-type(odd) .pattern {
   left: -5vw;
+  transition: left 0.3s;
+}
+main .preview:nth-of-type(odd):hover .pattern {
+  left: -10vw;
+}
+main .preview:nth-of-type(even) {
+  grid-template-columns: 0.45fr 0.55fr;
+}
+main .preview:nth-of-type(even) .image {
+  margin: 1.5em 1.5em 0 0;
+  order: 1;
+  order: 2;
+}
+main .preview:nth-of-type(even) .image:before {
+  right: -1.5em;
+}
+main .preview:nth-of-type(even) .content {
+  order: 1;
+}
+main .preview:nth-of-type(even) .pattern {
+  right: -5vw;
+  transition: right 0.3s;
+}
+main .preview:nth-of-type(even):hover .pattern {
+  right: -10vw;
 }
 main a {
   color: unset;
@@ -178,6 +208,15 @@ main .pattern {
 }
 main .pattern.yellow {
   background-image: url("/images/pattern-yellow.png");
+}
+main .pattern.red {
+  background-image: url("/images/pattern-red.png");
+}
+main .pattern.green {
+  background-image: url("/images/pattern-green.png");
+}
+main .pattern.blue {
+  background-image: url("/images/pattern-blue.png");
 }
 
 img {

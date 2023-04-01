@@ -4,10 +4,10 @@ main {
     display: grid;
     grid-gap: 2em;
     grid-template-columns: .55fr .45fr;
+    margin-bottom: 8em;
     text-align: center;
 
     .image {
-      margin: 1.5em 0 0 1.5em;
       position: relative;
       transition: margin .3s;
       z-index: 5;
@@ -31,7 +31,6 @@ main {
       &:before {
         content: '';
         height: 100%;
-        left: -1.5em;
         position: absolute;
         top: -1.5em;
         width: 100%;
@@ -48,6 +47,7 @@ main {
       align-content: center;
       display: grid;
       height: 100%;
+      order: 2;
       position: relative;
 
       h2 {
@@ -80,9 +80,7 @@ main {
 
       .pattern {
         bottom: 5px;
-        left: 0;
-        position: absolute;
-        transition: left .3s;
+        position: absolute;        
         width: 100vw;
       }
     }
@@ -94,8 +92,55 @@ main {
       h2 {
         transform: scale(1.025);
       }
+    }
+
+    &:nth-of-type(odd) {
+      .image {
+        margin: 1.5em 0 0 1.5em;
+        order: 1;
+
+        &:before {
+          left: -1.5em;
+        }
+      }
+
       .pattern {
         left: -5vw;
+        transition: left .3s;
+      }
+
+      &:hover {
+        .pattern {
+          left: -10vw;
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      grid-template-columns: .45fr .55fr;
+      .image { 
+        margin: 1.5em 1.5em 0 0;
+        order: 1;
+        order: 2;
+
+        &:before {
+          right: -1.5em;
+        }
+      }
+
+      .content {
+        order: 1;
+      }
+
+      .pattern {
+        right: -5vw;
+        transition: right .3s;
+      }
+
+      &:hover {
+        .pattern {
+          right: -10vw;
+        }
       }
     }
   }
@@ -111,6 +156,15 @@ main {
 
     &.yellow {
       background-image: url("/images/pattern-yellow.png");
+    }
+    &.red {
+      background-image: url("/images/pattern-red.png");
+    }
+    &.green {
+      background-image: url("/images/pattern-green.png");
+    }
+    &.blue {
+      background-image: url("/images/pattern-blue.png");
     }
   }
 }
