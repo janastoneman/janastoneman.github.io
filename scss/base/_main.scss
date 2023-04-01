@@ -85,11 +85,21 @@ main {
       .pattern {
         @include below-desktop {
           bottom: -3em;
+          height: 30px;
         }
 
+        background-size: contain;
         bottom: 5px;
         position: absolute;        
         width: 100vw;
+
+        &:before {
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          width: 100vw;
+        }
       }
     }
 
@@ -115,11 +125,25 @@ main {
       .pattern {
         left: -5vw;
         transition: left .3s;
+
+        &:before {
+          background: $cream-gradient-reverse;
+          right: 50vw;
+          transition: right 2s;
+        }
+
+        &.has-animated {
+          &:before {
+            right: -100vw;
+          }
+        }
       }
 
       &:hover {
-        .pattern {
-          left: -10vw;
+        @include desktop {
+          .pattern {
+            left: -10vw;
+          }
         }
       }
     }
@@ -153,11 +177,25 @@ main {
       .pattern {
         right: -5vw;
         transition: right .3s;
+
+        &:before {
+          background: $cream-gradient;
+          left: 50vw;
+          transition: left 2s;
+        }
+
+        &.has-animated {
+          &:before {
+            left: -100vw;
+          }
+        }
       }
 
       &:hover {
-        .pattern {
-          right: -10vw;
+        @include desktop {
+          .pattern {
+            right: -10vw;
+          }
         }
       }
     }

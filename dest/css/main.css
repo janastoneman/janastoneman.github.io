@@ -184,6 +184,7 @@ main .preview .content p {
   margin-top: 2em;
 }
 main .preview .content .pattern {
+  background-size: contain;
   bottom: 5px;
   position: absolute;
   width: 100vw;
@@ -191,7 +192,15 @@ main .preview .content .pattern {
 @media (max-width: 980px) {
   main .preview .content .pattern {
     bottom: -3em;
+    height: 30px;
   }
+}
+main .preview .content .pattern:before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100vw;
 }
 main .preview:hover .image img {
   transform: scale(1.025);
@@ -210,8 +219,18 @@ main .preview:nth-of-type(odd) .pattern {
   left: -5vw;
   transition: left 0.3s;
 }
-main .preview:nth-of-type(odd):hover .pattern {
-  left: -10vw;
+main .preview:nth-of-type(odd) .pattern:before {
+  background: linear-gradient(90deg, rgba(254, 247, 226, 0) 0%, rgb(254, 247, 226) 18%, rgb(254, 247, 226) 100%);
+  right: 50vw;
+  transition: right 2s;
+}
+main .preview:nth-of-type(odd) .pattern.has-animated:before {
+  right: -100vw;
+}
+@media (min-width: 980px) {
+  main .preview:nth-of-type(odd):hover .pattern {
+    left: -10vw;
+  }
 }
 main .preview:nth-of-type(even) {
   grid-template-columns: 0.45fr 0.55fr;
@@ -245,8 +264,18 @@ main .preview:nth-of-type(even) .pattern {
   right: -5vw;
   transition: right 0.3s;
 }
-main .preview:nth-of-type(even):hover .pattern {
-  right: -10vw;
+main .preview:nth-of-type(even) .pattern:before {
+  background: linear-gradient(90deg, rgb(254, 247, 226) 0%, rgb(254, 247, 226) 82%, rgba(254, 247, 226, 0) 100%);
+  left: 50vw;
+  transition: left 2s;
+}
+main .preview:nth-of-type(even) .pattern.has-animated:before {
+  left: -100vw;
+}
+@media (min-width: 980px) {
+  main .preview:nth-of-type(even):hover .pattern {
+    right: -10vw;
+  }
 }
 main a {
   color: unset;

@@ -1,6 +1,8 @@
 // Primary colors
 $color-black: #3c3c3c;
 $color-cream: #fef7e2;
+$cream-gradient: linear-gradient(90deg, rgba(254,247,226,1) 0%, rgba(254,247,226,1) 82%, rgba(254,247,226,0) 100%);
+$cream-gradient-reverse: linear-gradient(90deg, rgba(254,247,226,0) 0%, rgba(254,247,226,1) 18%, rgba(254,247,226,1) 100%);
 $color-green: #2b8275;
 $color-red: #be1643;
 $color-blue: #2c435e;
