@@ -1,5 +1,9 @@
 main {
   .preview {
+    @include below-desktop {
+      grid-template-columns: 1fr;
+    }
+
     align-items: center;
     display: grid;
     grid-gap: 2em;
@@ -79,6 +83,10 @@ main {
       }
 
       .pattern {
+        @include below-desktop {
+          bottom: -3em;
+        }
+
         bottom: 5px;
         position: absolute;        
         width: 100vw;
@@ -117,10 +125,16 @@ main {
     }
 
     &:nth-of-type(even) {
+      @include below-desktop {
+        grid-template-columns: 1fr;
+      }
       grid-template-columns: .45fr .55fr;
-      .image { 
+      .image {
+        @include below-desktop {
+          order: 1;
+        }
+
         margin: 1.5em 1.5em 0 0;
-        order: 1;
         order: 2;
 
         &:before {
@@ -129,6 +143,10 @@ main {
       }
 
       .content {
+        @include below-desktop {
+          order: 2;
+        }
+
         order: 1;
       }
 
