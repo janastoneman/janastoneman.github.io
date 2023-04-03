@@ -64,7 +64,7 @@ gulp.task('watch', gulp.series('clean', 'build', 'copy', () => {
     server: './'
   });
   gulp.watch('scss/**', gulp.series('sass'));
-  gulp.watch(['./index.*']).on('change', browserSync.reload);
+  gulp.watch(['./index.*', 'js/**']).on('change', browserSync.reload);
 }));
 
 // Compile sass into CSS & auto-inject into browsers
@@ -74,4 +74,4 @@ gulp.task('sass', () => gulp
   .pipe(gulp.dest(`${options.paths.output}/css`))
   .pipe(browserSync.stream()));
 
-gulp.task('default', gulp.series('startup', 'clean', 'build'));
+gulp.task('default', gulp.series('startup', 'clean', 'build', 'copy'));
