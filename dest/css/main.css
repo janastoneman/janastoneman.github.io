@@ -167,18 +167,6 @@ main .preview .content h2 {
   transition: transform 0.3s;
   width: fit-content;
 }
-main .preview .content h2.blue {
-  border-bottom-color: #2c435e;
-}
-main .preview .content h2.red {
-  border-bottom-color: #be1643;
-}
-main .preview .content h2.yellow {
-  border-bottom-color: #ffc000;
-}
-main .preview .content h2.green {
-  border-bottom-color: #2b8275;
-}
 main .preview .content p {
   font-size: 1.5em;
   margin-top: 2em;
@@ -213,9 +201,14 @@ main .preview:nth-of-type(odd) .image {
   order: 1;
 }
 main .preview:nth-of-type(odd) .image:before {
+  background-color: #2c435e;
   left: -1.5em;
 }
+main .preview:nth-of-type(odd) h2 {
+  border-bottom-color: #ffc000;
+}
 main .preview:nth-of-type(odd) .pattern {
+  background-image: url("/images/pattern-yellow.png");
   left: -5vw;
   transition: left 0.3s;
 }
@@ -250,7 +243,11 @@ main .preview:nth-of-type(even) .image {
   }
 }
 main .preview:nth-of-type(even) .image:before {
+  background-color: #be1643;
   right: -1.5em;
+}
+main .preview:nth-of-type(even) h2 {
+  border-bottom-color: #2b8275;
 }
 main .preview:nth-of-type(even) .content {
   order: 1;
@@ -261,6 +258,7 @@ main .preview:nth-of-type(even) .content {
   }
 }
 main .preview:nth-of-type(even) .pattern {
+  background-image: url("/images/pattern-green.png");
   right: -5vw;
   transition: right 0.3s;
 }
@@ -284,18 +282,6 @@ main a {
 main .pattern {
   height: 40px;
   width: 100%;
-}
-main .pattern.yellow {
-  background-image: url("/images/pattern-yellow.png");
-}
-main .pattern.red {
-  background-image: url("/images/pattern-red.png");
-}
-main .pattern.green {
-  background-image: url("/images/pattern-green.png");
-}
-main .pattern.blue {
-  background-image: url("/images/pattern-blue.png");
 }
 
 img {
@@ -886,4 +872,3 @@ h3 {
 .grid-auto-rows {
   grid-auto-rows: 1fr;
 }
-/*# sourceMappingURL=main.css.map */
