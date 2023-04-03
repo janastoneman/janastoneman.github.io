@@ -12,7 +12,6 @@ function animateOnScroll() {
       el.classList.add('has-animated');
     }
   });
-  console.log("it ran");
 }
 
 // run animations for items that are already in the viewport
