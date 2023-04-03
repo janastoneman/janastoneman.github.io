@@ -55,7 +55,11 @@ gulp.task('build', () => gulp
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(`${options.paths.output}/css`)));
 
-gulp.task('watch', gulp.series('clean', 'build', () => {
+gulp.task('copy', () => gulp
+.src('js/**/*.js')
+.pipe(gulp.dest(`${options.paths.output}/js`)));
+
+gulp.task('watch', gulp.series('clean', 'build', 'copy', () => {
   browserSync.init({
     server: './'
   });
