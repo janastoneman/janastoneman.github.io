@@ -1,0 +1,108 @@
+.showcase {
+
+  h2 {
+    font-size: 2.4em;
+    margin-top: 0;
+  }
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  display: grid;
+  grid-template-columns: .55fr .45fr;
+  grid-gap: 2em;
+
+  .intro {
+    @include tablet {
+      order: 1;
+    }
+
+    order: 2;
+
+    .callouts {
+      @include tablet {
+        grid-gap: 2em;
+        margin-top: 2em;
+      }
+      display: grid;
+      grid-gap: 4em;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      margin-top: 4em;
+
+      div {
+        color: $color-white;
+        font-family: $secondary-font;
+        font-size: 1.2em;
+        padding: 15px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        width: 80%;
+        z-index: 100;
+
+        &:before {
+          background-position: right;
+          background-repeat: no-repeat;
+          background-size: contain;
+          content: '';
+          height: 100%;
+          right: calc(100% + 1em);
+          position: absolute;
+          top: 0;
+          width: 50px;
+        }
+
+        &.red {
+          background-color: $color-red;
+
+          &:before {
+            @include above-tablet {
+              // background-image: url("/images/pattern-red.png");
+            }
+          }
+        }
+
+        &.green {
+          background-color: $color-green;
+
+          &:before {
+            @include above-tablet {
+              // background-image: url("/images/pattern-green.png");
+            }
+          }
+        }
+
+        &.blue {
+          background-color: $color-blue;
+
+          &:before {
+            @include above-tablet {
+              // background-image: url("/images/pattern-blue.png");
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .small {
+    font-size: .75em;
+  }
+
+  .photo {
+    @include tablet {
+      margin-top: 0;
+      order: 2;
+    }
+    @include above-tablet {
+      margin-top: 170px;
+    }
+    @include desktop {
+      margin-top: 0;
+    }
+    order: 1;
+    position: relative;
+  }
+
+}

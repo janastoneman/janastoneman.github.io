@@ -1,0 +1,212 @@
+.home {
+  .preview {
+    @include below-desktop {
+      grid-template-columns: 1fr;
+    }
+
+    align-items: center;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: .55fr .45fr;
+    margin-bottom: 8em;
+    text-align: center;
+
+    .image {
+      position: relative;
+      transition: margin .3s;
+      z-index: 5;
+
+      &.yellow:before {
+        background-color: $color-yellow;
+      }
+
+      &.green:before {
+        background-color: $color-green;
+      }
+
+      &.red:before {
+        background-color: $color-red;
+      }
+
+      &.blue:before {
+        background-color: $color-blue;
+      }
+
+      &:before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: -1.5em;
+        width: 100%;
+        z-index: -1;
+      }
+
+      img {
+        transform: scale(1);
+        transition: transform .3s;
+      }
+    }
+
+    .content {
+      align-content: center;
+      display: grid;
+      height: 100%;
+      order: 2;
+      position: relative;
+
+      h2 {
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        margin: 0 auto;
+        padding-bottom: .5em;
+        transform: scale(1);
+        transition: transform .3s;
+        width: fit-content;
+      }
+
+      p {
+        font-size: 1.5em;
+        margin-top: 2em;
+      }
+
+      .pattern {
+        @include below-desktop {
+          bottom: -3em;
+          height: 30px;
+        }
+
+        background-size: contain;
+        bottom: 5px;
+        position: absolute;        
+        width: 100vw;
+
+        &:before {
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          width: 100vw;
+        }
+      }
+    }
+
+    &:hover {
+      .image img {
+        transform: scale(1.025);
+      }
+      h2 {
+        transform: scale(1.025);
+      }
+    }
+
+    &:nth-of-type(odd) {
+      .image {
+        margin: 1.5em 0 0 1.5em;
+        order: 1;
+
+        &:before {
+          background-color: $color-blue;
+          left: -1.5em;
+        }
+      }
+
+      h2 {
+        border-bottom-color: $color-yellow;
+      }
+
+      .pattern {
+        background-image: url("/images/pattern-yellow.png");
+        left: -5vw;
+        transition: left .3s;
+
+        &:before {
+          background: $cream-gradient-reverse;
+          right: 50vw;
+          transition: right 2s;
+        }
+
+        &.has-animated {
+          &:before {
+            right: -100vw;
+          }
+        }
+      }
+
+      &:hover {
+        @include desktop {
+          .pattern {
+            left: -10vw;
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      @include below-desktop {
+        grid-template-columns: 1fr;
+      }
+      grid-template-columns: .45fr .55fr;
+      .image {
+        @include below-desktop {
+          order: 1;
+        }
+
+        margin: 1.5em 1.5em 0 0;
+        order: 2;
+
+        &:before {
+          background-color: $color-red;
+          right: -1.5em;
+        }
+      }
+
+      h2 {
+        border-bottom-color: $color-green;
+      }
+
+      .content {
+        @include below-desktop {
+          order: 2;
+        }
+
+        order: 1;
+      }
+
+      .pattern {
+        background-image: url("/images/pattern-green.png");
+        right: -5vw;
+        transition: right .3s;
+
+        &:before {
+          background: $cream-gradient;
+          left: 50vw;
+          transition: left 2s;
+        }
+
+        &.has-animated {
+          &:before {
+            left: -100vw;
+          }
+        }
+      }
+
+      &:hover {
+        @include desktop {
+          .pattern {
+            right: -10vw;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+
+  .pattern {
+    height: 40px;
+    width: 100%;
+  }
+}

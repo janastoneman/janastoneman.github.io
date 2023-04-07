@@ -1,6 +1,12 @@
 import isInViewPort from './util/isInViewPort.js';
 import $ from './util/selector-shorthand.js';
 
+// load header include file
+const response = await fetch('/include/header.inc.html');
+const body = await response.text();
+
+$.one('header').innerHTML = body;
+
 function animateOnScroll() {
   const patterns = $.all('.pattern');
   patterns.forEach((el) => {

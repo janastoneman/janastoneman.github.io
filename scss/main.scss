@@ -8,7 +8,8 @@
 
 @import 'base/-base';
 @import 'layout/-layout';
-@import 'patterns/-patterns';
+@import 'pages/home';
+@import 'pages/showcase';
 
 // this needs to be last to make sure we're overriding other rules
 
