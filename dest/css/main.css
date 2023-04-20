@@ -66,12 +66,16 @@ header .logo {
   font-size: 2em;
   order: 1;
   position: relative;
+  text-align: center;
 }
 @media (min-width: 980px) {
   header .logo {
     bottom: 32px;
     order: 2;
   }
+}
+header .logo .subtitle {
+  font-size: 0.5em;
 }
 header nav a,
 header .logo a {

@@ -53,6 +53,11 @@ header {
         font-size: 2em;
         order: 1;
         position: relative;
+        text-align: center;
+
+        .subtitle {
+            font-size: .5em;
+        }
     }
 
     nav,
